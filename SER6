@@ -1,0 +1,65 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+void findClosest(int A[], int B[], int C[], int p, int q, int r) 
+{ 
+  
+    int diff = INT_MAX; 
+  
+   
+    int res_i =0, res_j = 0, res_k = 0; 
+  
+    
+    int i=0,j=0,k=0; 
+    while (i < p && j < q && k < r) 
+    { 
+        // Find minimum and maximum of current three elements 
+        int minimum = min(A[i], min(B[j], C[k])); 
+        int maximum = max(A[i], max(B[j], C[k])); 
+  
+        // Update result if current diff is less than the min 
+        // diff so far 
+        if (maximum-minimum < diff) 
+        { 
+             res_i = i, res_j = j, res_k = k; 
+             diff = maximum - minimum; 
+        } 
+  
+        // We can't get less than 0 as values are absolute 
+        if (diff == 0) break; 
+  
+        // Increment index of array with smallest value 
+        if (A[i] == minimum) i++; 
+        else if (B[j] == minimum) j++; 
+        else k++; 
+    } 
+  
+    // Print result 
+    cout << A[res_i] << " " << B[res_j] << " " << C[res_k]; 
+} 
+  
+// Driver program 
+int main() 
+{ 
+   int a;
+  cin>>a;
+  int p1[a];
+  for(int t1=0;t1<a;t1++)
+    cin>>p1[t1];
+  int b;
+  cin>>b;
+   int p2[b];
+  for(int t2=0;t2<b;t2++)
+    cin>>p2[t2];
+  int c;
+  cin>>c;
+  int p3[c];
+  for(int t3=0;t3<c;t3++)
+    cin>>p3[t3];
+    int p = sizeof p1 / sizeof p1[0]; 
+    int q = sizeof p2/ sizeof p2[0]; 
+    int r = sizeof p3 / sizeof p3[0]; 
+  
+    findClosest(p1, p2, p3, p, q, r); 
+    return 0; 
+} 
