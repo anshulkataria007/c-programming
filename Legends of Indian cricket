@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+const string EMPTY = "";
+
+const string X[] = { EMPTY, "one ", "two ", "three ", "four ", "five ",
+				"six ", "seven ", "eight ", "nine ", "ten ", "eleven ",
+				"twelve ", "thirteen ", "fourteen ", "fifteen ",
+				"sixteen ", "seventeen ", "eighteen ", "nineteen " };
+
+const string Y[] = { EMPTY, EMPTY, "twenty ", "thirty ", "forty ", "fifty ",
+				"sixty ", "seventy ", "eighty ", "ninety " };
+
+// Function to convert single digit or two digit number into words
+string convert2digit(int n, string suffix)
+{
+	// if n is zero
+	if (n == 0) {
+		return EMPTY;
+	}
+
+	// split n if it is more than 19
+	if (n > 19) {
+		return Y[n / 10] + X[n % 10] + suffix;
+	}
+	else {
+		return X[n] + suffix;
+	}
+}
+
+// Function to convert a given number (max 9-digits) into words
+string numberToWords(unsigned long long int n)
+{
+	// string to store word representation of given number
+	string res;
+
+	// this handles digits at ones & tens place
+	res = convert2digit((n % 100), "");
+
+	if (n > 100 && n % 100) {
+		res = "and " + res;
+	}
+
+	// this handles digit at hundreds place
+	res = convert2digit(((n / 100) % 10), "hundred ") + res;
+
+	// this handles digits at thousands & tens thousands place
+	res = convert2digit(((n / 1000) % 100), "thousand ") + res;
+
+	// this handles digits at hundred thousands & one millions place
+	res = convert2digit(((n / 100000) % 100), "lakh ") + res;
+
+	// this handles digits at ten millions & hundred millions place
+	res = convert2digit((n / 10000000) % 100, "crore ") + res;
+
+	// this handles digits at ten millions & hundred millions place
+	res = convert2digit((n / 1000000000) % 100, "billion, ") + res;
+
+	return res;
+}
+
+
+int main()
+{
+	unsigned long long int a;
+  cin>>a;
+  numberToWords(a);
+  cout<<numberToWords(a);
+
+	return 0;
+}
