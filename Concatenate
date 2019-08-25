@@ -1,0 +1,28 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class concatenate
+{
+    public:
+       string a,b;
+       void read()
+       {
+         cin>>a>>b;
+       }
+  
+       void operator +() ;
+  void display()
+  {cout<<a+b;
+  }
+};
+void concatenate::operator +()
+{a+b;
+}
+int main()
+{
+    concatenate obj;
+    obj.read();
+    +obj; 
+    obj.display();
+    return 0;
+}
