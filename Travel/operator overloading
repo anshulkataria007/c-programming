@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+class Distance
+{
+  public:
+  int feet;
+  int inches;
+  Distance(int f,int i)
+  {feet=f;
+   inches=i;
+  }
+  void operator-()
+  {
+  }
+  Distance operator+()
+  {
+  }
+  void displayDistance()
+  {
+  }
+  void displayDistance(int feet,int inches)
+  {
+    cout<<"Travelling Forward"<<endl;
+    cout<<"Feet="<<feet<<" Inches="<<inches<<endl;
+    cout<<"Travelling Backwards"<<endl;
+    cout<<"Feet="<<feet<<" Inches="<<inches<<endl;
+  }
+};
+int main()
+{
+  int m,n;
+  cin>>m>>n;
+  Distance d(m,n);
+  -d;
+  +d;
+  d.displayDistance(m,n);
+  return 0;
+}
