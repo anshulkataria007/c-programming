@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+class data
+{ public:
+ int a1,a2,a3,a4;
+ void getdata()
+ {cin>>a1>>a2>>a3>>a4;
+ }
+ void operator -()
+ {
+   a1=-a1;
+   a2=-a2;
+   a3=-a3;
+   a4=-a4;
+ }
+ void setdata()
+ {cout<<a1<<" "<<a2<<endl;
+   cout<<a3<<" "<<a4<<endl;
+ }
+};
+int main()
+{
+  data obj;
+  obj.getdata();
+  -obj;
+  obj.setdata();
+  return 0;
+}
