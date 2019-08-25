@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+class Time
+{
+  public:
+  int hours,mins,secs;
+  void operator <<(Time hours);
+  void operator >>(Time hours);
+  void input()
+  {cin>>hours>>mins>>secs;
+  }
+  void output()
+  {
+    cout<<hours<<" Hours "<<mins<<" Mins "<<secs<< " secs";
+  }
+};
+int main()
+{
+  Time obj;
+  //>>obj;
+  //<<obj;
+  obj.input();
+  obj.output();
+  return 0;
+}
