@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+class increment
+{
+    public:
+       double a,b,c;
+       void getx()
+       {
+         cin>>a>>b>>c;
+       }
+  
+       void operator ++() ;
+  void display()
+  {cout<<a<<" "<<b<<" "<<c;
+  }
+};
+void increment::operator ++()
+{++a;
+          ++b;
+          ++c;
+}
+int main()
+{
+    increment obj;
+    obj.getx();
+    ++obj; 
+    obj.display();
+    return 0;
+}
