@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+class A
+{
+  public:
+  int pens;
+  void display()
+  {
+  }
+};
+class B
+{
+  public:
+  int price;
+  void display()
+  {
+    //cin>>price;
+  }
+};
+class C: public A, public B
+{ 
+ public:
+ 
+ void display()
+ {cin>>pens>>price;
+ cout<<pens*price;
+ }
+ };
+ int main()
+ {
+   C sample;
+   //sample.A::display();
+  //sample.B::display();
+  sample.display();
+   return 0;
+ }
