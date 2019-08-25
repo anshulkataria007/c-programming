@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+class Area
+{
+  public:
+  float l,h;
+   float getArea(float l,float h)
+   {cout<<(l*h)<<endl;
+   }
+};
+class Perimeter
+{
+  public:
+  float getPerimeter(float l, float h)
+  {
+    printf("%0.2f",2*l+2*h);
+  }
+};
+class Rectangle:public Area,public Perimeter
+{
+public:
+// float getArea(float,float);
+//float getPerimeter(float,float);
+};
+  int main()
+  { float a,b;
+   cin>>a>>b;
+    Rectangle d;
+    d.getArea(a,b);
+   d.getPerimeter(a,b);
+   return 0;
+  }
