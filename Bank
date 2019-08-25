@@ -1,0 +1,42 @@
+#include <iostream>
+#include<string>
+using namespace std;
+class Bank
+{
+  public:
+  string s;
+  int a,b;
+  void getvalue()
+  {cin>>s>>a>>b;
+  }
+};
+class Customer
+{
+  public:
+  int i,c;
+  void getinterest(){
+    cin>>c;
+  i=(c*12*3)/100;}
+  
+};
+class Account:public Customer,public Bank
+{
+public:
+void display()
+{
+cout<<"Customer Name="<<s<<endl;
+cout<<"Customer Id="<<a<<endl;
+cout<<"Account No="<<b<<endl;
+cout<<"Account Balance="<<c<<endl;
+cout<<"Interest="<<i;
+}
+};
+int main()
+{Account obj;
+ obj.getvalue();
+ obj.getinterest();
+ obj.display();
+ return 0;
+}
+  
+ 
