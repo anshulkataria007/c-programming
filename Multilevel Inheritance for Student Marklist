@@ -1,0 +1,26 @@
+#include <iostream>
+#include<string>
+using namespace std;
+class Student
+{
+  public:
+};
+class Grade : public Student
+{string s;
+public:
+ Grade(string str,string str2,int m,int n)
+ {str=s;
+ }
+ char calculate()
+ {
+ }
+};
+int main()
+{
+  string s1,s2;
+  int a,b;
+  cin>>s1>>s2>>a>>b;
+  Grade obj(s1,s2,a,b);
+  obj.calculate();
+ return 0;
+}
