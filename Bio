@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class student
+{
+  public:
+  int rollno;
+  int mark1;
+  int mark2;
+  void getdata()
+  {
+    cin >> rollno >> mark1 >> mark2;
+  }
+};
+class sports
+{
+public:
+int mark3;
+  void getvalue()
+  {
+    cin >> mark3;
+  }
+};
+class statement:public student,public sports
+{
+public:
+void display()
+{
+cout<<"Roll No:"<<rollno<<endl;
+cout<<"Total:"<<mark1+mark2+mark3<<endl;
+cout<<"Average:"<<(mark1+mark2+mark3)/3<<endl;
+}
+};
+int main()
+{
+  statement obj;
+  obj.getdata();
+  obj.getvalue();
+  obj.display();
+  return 0;
+}
