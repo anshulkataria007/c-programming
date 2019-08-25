@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class Fraction 
+{
+  public:
+  int numerator,denominator;
+  int a1,a2,a3,a4;
+  void getdata()
+  {
+    cin>>a1>>a2>>a3>>a4;
+  }
+  void operator+(){
+    numerator+denominator;
+    
+  }
+  void display()
+  {	cout<<(a1*a4)+(a2*a3)<<"/"<<a2*a4;
+  }
+};
+int main()
+{Fraction obj;
+ +obj;
+ obj.getdata(); 
+ obj.display();
+ return 0;
+}
