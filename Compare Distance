@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+class Distance
+{public:
+ int feet ,inches;
+ int arr1[2],arr[2];
+ Distance(int f,int i)
+ {feet=f;
+  inches=i;
+   
+ }
+ void operator <(Distance feet);
+ void displayDistance(int arr1[],int arr[2])
+ { int i=1;
+   while(i!=0)
+ {
+   if(arr1[i]>arr[i])
+   {
+     cout<<"First One is Greater\n";
+   }
+   else if(arr1[i]<arr[i])
+   {
+     cout<<"Second One is Greater"<<endl;
+   }
+   else
+   {
+     cout<<"Both are equal"<<endl;
+   }
+     i--;
+ }
+ }
+};
+int main()
+{
+  int a[2],b[2];
+  for(int i=0;i<2;i++)
+  {
+    cin>>a[1];
+  }
+  for(int i=0;i<2;i++)
+  {
+    cin>>b[i];
+  }
+  Distance obj(2,3);
+  //<obj;
+  obj.displayDistance(a,b);
+    return 0;
+}
+                
